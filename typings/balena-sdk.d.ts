@@ -486,6 +486,7 @@ declare namespace BalenaSdk {
 		should_be_managed_by__supervisor_release: number;
 
 		belongs_to__application: NavigationResource<Application>;
+		belongs_to__organization: NavigationResource<Organization>;
 		belongs_to__user: NavigationResource<User>;
 		should_be_running__release: NavigationResource<Release>;
 		is_managed_by__service__instance: NavigationResource<ServiceInstance>;
