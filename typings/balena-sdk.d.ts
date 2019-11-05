@@ -27,10 +27,10 @@ declare namespace BalenaSdk {
 	>;
 	type PineFilterFor<T> = Pine.Filter<T>;
 	type PineExpandFor<T> = Pine.Expand<T>;
-	type PineOptionsFor<T> = Pine.PineOptionsFor<T>;
+	type PineOptionsFor<T> = Pine.ODataOptions<T>;
 	type PineSubmitBody<T> = Pine.SubmitBody<T>;
-	type PineParamsFor<T> = Pine.PineParamsFor<T>;
-	type PineParamsWithIdFor<T> = Pine.PineParamsWithIdFor<T>;
+	type PineParamsFor<T> = Pine.ParamsObj<T>;
+	type PineParamsWithIdFor<T> = Pine.ParamsObjWithId<T>;
 	type PineSelectableProps<T> = Pine.SelectableProps<T>;
 	type PineExpandableProps<T> = Pine.ExpandableProps<T>;
 
