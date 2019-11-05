@@ -29,10 +29,12 @@ type InferAssociatedResourceType<T> = T extends (AssociatedResource & any[])
 	? T[number]
 	: never;
 
-export type SelectableProps<T> = Exclude<
-	StringKeyof<T>,
-	PropsOfType<T, ReverseNavigationResource>
->;
+export type SelectableProps<T> =
+	// This allows us to get proper results when T is any/AnyObject, otherwise this returned never
+	PropsOfType<T, ReverseNavigationResource> extends StringKeyof<T>
+		? StringKeyof<T>
+		: // This is the normal typed case
+		  Exclude<StringKeyof<T>, PropsOfType<T, ReverseNavigationResource>>;
 
 export type ExpandableProps<T> = PropsOfType<T, AssociatedResource> & string;
 
